@@ -698,11 +698,11 @@
             const now = Date.now();
             const elapsed = now - introTimer;
 
-            if(introTimelineStep === 1 && elapsed > 1200) { introTimelineStep = 2; applyTargets("4"); introTimer = now; }
-            else if(introTimelineStep === 2 && elapsed > 1200) { introTimelineStep = 3; applyTargets("3"); introTimer = now; }
-            else if(introTimelineStep === 3 && elapsed > 1200) { introTimelineStep = 4; applyTargets("2"); introTimer = now; }
-            else if(introTimelineStep === 4 && elapsed > 1200) { introTimelineStep = 5; applyTargets("1"); introTimer = now; }
-            else if(introTimelineStep === 5 && elapsed > 1200) { 
+            if(introTimelineStep === 1 && elapsed > 1300) { introTimelineStep = 2; applyTargets("4"); introTimer = now; }
+            else if(introTimelineStep === 2 && elapsed > 1300) { introTimelineStep = 3; applyTargets("3"); introTimer = now; }
+            else if(introTimelineStep === 3 && elapsed > 1300) { introTimelineStep = 4; applyTargets("2"); introTimer = now; }
+            else if(introTimelineStep === 4 && elapsed > 1300) { introTimelineStep = 5; applyTargets("1"); introTimer = now; }
+            else if(introTimelineStep === 5 && elapsed > 1300) { 
                 introTimelineStep = 6; applyTargets("2026"); introTimer = now; 
                 new TWEEN.Tween(camera.position).to({z: 160}, 2000).easing(TWEEN.Easing.Cubic.Out).start();
             }
@@ -1075,8 +1075,8 @@
                         const deltaY = handPos.y - lastHandPos.y;
                         
                         if (deltaX > 0.001) rotationVelocity.y += deltaX * 0.45; 
-                        if (deltaX < -0.001) rotationVelocity.y += deltaX * 0.2;
-                        if (deltaY > 0.001) rotationVelocity.x += deltaY * 0.45;
+                        if (deltaX < -0.001) rotationVelocity.y += deltaX * 0.1;
+                        if (deltaY > 0.001) rotationVelocity.x += deltaY * 0.9;
                         if (deltaY < -0.001) rotationVelocity.x += deltaY * 0.2;
                         lastHandPos.x = handPos.x; lastHandPos.y = handPos.y;
                     }
@@ -1427,6 +1427,7 @@
     </script>
 </body>
 </html>
+
 
 
 
