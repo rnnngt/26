@@ -1074,19 +1074,19 @@
                         const deltaX = handPos.x - lastHandPos.x;
                         const deltaY = handPos.y - lastHandPos.y;
                         
-                        if (deltaX > 0.001) rotationVelocity.y += deltaX * 0.6; 
-                        if (Math.abs(deltaY) > 0.001) rotationVelocity.x += deltaY * 0.36; 
+                        if (Math.abs(deltaX) > 0.001) rotationVelocity.y += deltaX * 0.5; 
+                        if (Math.abs(deltaY) > 0.001) rotationVelocity.x += deltaY * 0.5; 
                         lastHandPos.x = handPos.x; lastHandPos.y = handPos.y;
                     }
                     rotationVelocity.y = Math.min(Math.max(rotationVelocity.y, -0.3), 0.3); 
-                    rotationVelocity.x = Math.min(Math.max(rotationVelocity.x, -0.15), 0.15);
+                    rotationVelocity.x = Math.min(Math.max(rotationVelocity.x, -0.3), 0.3);
                     
                     mainGroup.rotation.y += rotationVelocity.y;
                     mainGroup.rotation.x += rotationVelocity.x;
                     
-                    rotationVelocity.y *= 0.97; 
-                    rotationVelocity.x *= 0.95; 
-                    mainGroup.rotation.x *= 0.97; 
+                    rotationVelocity.y *= 0.96; 
+                    rotationVelocity.x *= 0.96; 
+                    mainGroup.rotation.x *= 0.96; 
                 } else if (currentState === STATE.TREE) {
                     mainGroup.rotation.y += 0.006;
                     mainGroup.rotation.x *= 0.97;
@@ -1425,6 +1425,7 @@
     </script>
 </body>
 </html>
+
 
 
 
