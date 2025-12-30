@@ -1074,22 +1074,22 @@
                         const deltaX = handPos.x - lastHandPos.x;
                         const deltaY = handPos.y - lastHandPos.y;
                         
-                        if (deltaX > 0.001) rotationVelocity.y += deltaX * 0.2; 
-                        if (Math.abs(deltaY) > 0.001) rotationVelocity.x += deltaY * 0.08; 
+                        if (deltaX > 0.001) rotationVelocity.y += deltaX * 0.6; 
+                        if (Math.abs(deltaY) > 0.001) rotationVelocity.x += deltaY * 0.36; 
                         lastHandPos.x = handPos.x; lastHandPos.y = handPos.y;
                     }
-                    rotationVelocity.y = Math.min(Math.max(rotationVelocity.y, -0.1), 0.1); 
-                    rotationVelocity.x = Math.min(Math.max(rotationVelocity.x, -0.05), 0.05);
+                    rotationVelocity.y = Math.min(Math.max(rotationVelocity.y, -0.3), 0.3); 
+                    rotationVelocity.x = Math.min(Math.max(rotationVelocity.x, -0.15), 0.15);
                     
                     mainGroup.rotation.y += rotationVelocity.y;
                     mainGroup.rotation.x += rotationVelocity.x;
                     
-                    rotationVelocity.y *= 0.95; 
-                    rotationVelocity.x *= 0.92; 
-                    mainGroup.rotation.x *= 0.95; 
+                    rotationVelocity.y *= 0.97; 
+                    rotationVelocity.x *= 0.95; 
+                    mainGroup.rotation.x *= 0.97; 
                 } else if (currentState === STATE.TREE) {
-                    mainGroup.rotation.y += 0.003;
-                    mainGroup.rotation.x *= 0.95;
+                    mainGroup.rotation.y += 0.006;
+                    mainGroup.rotation.x *= 0.97;
                 }
             }
             composer.render();
@@ -1425,6 +1425,7 @@
     </script>
 </body>
 </html>
+
 
 
 
